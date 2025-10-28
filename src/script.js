@@ -58,7 +58,7 @@ function updateCity(event) {
   )}</small></div>
   </div>
   <div class="back-link">
-    <a href="#" id="back-to-home"> Back to World Clock</a>
+    <a href="/" id="back-to-home"> Back to World Clock</a>
   </div>
   `;
 
