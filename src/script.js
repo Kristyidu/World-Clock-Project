@@ -30,7 +30,7 @@ function updateTime() {
   if (currentElement) {
     let currentDateElement = currentElement.querySelector(".date");
     let currentTimeElement = currentElement.querySelector(".time");
-    let currentTime = moment().tz("Africa/Lagos");
+    let currentTime = moment().tz(moment.tz.guess());
 
     currentDateElement.innerHTML = currentTime.format("MMMM	Do YYYY");
     currentTimeElement.innerHTML = currentTime.format(
