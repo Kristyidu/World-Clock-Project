@@ -25,19 +25,21 @@ function updateTime() {
     );
   }
 
-  // Current
+   // Current
   let currentElement = document.querySelector("#current");
   if (currentElement) {
     let currentDateElement = currentElement.querySelector(".date");
     let currentTimeElement = currentElement.querySelector(".time");
-    let currentTime = moment().tz(moment.tz.guess()); 
+    let currentTime = moment().tz("Africa/Lagos");
 
-    currentDateElement.innerHTML = currentTime.format("MMMM	Do YYYY"); 
+    currentDateElement.innerHTML = currentTime.format("MMMM	Do YYYY");
     currentTimeElement.innerHTML = currentTime.format(
       "h:mm:ss [<small>]A[</small>]"
     );
   }
 }
+
+
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
@@ -57,16 +59,8 @@ function updateCity(event) {
     "A"
   )}</small></div>
   </div>
-  <div class="back-link">
-    <a href="/" id="back-to-home"> Back to World Clock</a>
-  </div>
+  <a href="/">All cities</a>
   `;
-
-  document.querySelector("#back-to-home").addEventListener("click", function(e) {
-    e.preventDefault();
-    updateTime(); 
-    document.querySelector("#city").value = ""; 
-  });
 }
 
 updateTime();
